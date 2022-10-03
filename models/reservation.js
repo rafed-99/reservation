@@ -6,7 +6,7 @@ const reservationSchema = new mongoose.Schema({
     dateRetour : { type : Date , required : true },
     nbrPersonnes : { type : Number , required : true },
     paysDepart : { type : mongoose.SchemaTypes.ObjectId , ref : "PaysDepart"},  //relation one to one 
-    paysArrive : { type : mongoose.SchemaTypes.ObjectId , ref : "PaysArrive"},
+    destination : { type : mongoose.SchemaTypes.ObjectId , ref : "Destination"},
     moyenTransport : { type : mongoose.SchemaTypes.ObjectId , ref : "MoyenTransport"},
     allogement : { type : mongoose.SchemaTypes.ObjectId , ref : "Allogement"},
     prixTotal : { type : Number , required : true }
