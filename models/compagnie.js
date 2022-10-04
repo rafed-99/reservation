@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const compagnieSchema = new mongoose.Schema({
 
-    nomCompagnie : { type : String , required : true },
-    prixUnitaireCompagnie : { type : Number , required : true}
+    nomCompagnie : { type : String , required : true ,},
+    prixUnitaireCompagnie : { type : Number , required : true ,}
 
 })
 
