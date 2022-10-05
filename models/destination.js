@@ -10,7 +10,6 @@ const destinationSchema = new mongoose.Schema({
             Type : mongoose.SchemaTypes.ObjectId , ref : "Monument"
         }
     ],
-    videoPublicitaire : { Type : mongoose.SchemaTypes.ObjectId , ref : "VideoPublicitaire",}
 })
 
 const destination = mongoose.model("Destination",destinationSchema);

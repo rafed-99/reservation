@@ -8,5 +8,5 @@ const allogementSchema = new mongoose.Schema({
 
 })
 
-const Allogement  = mongoose.model("Allogement",allogementSchema);
-module.exports = Allogement;
+const allogement  = mongoose.model("Allogement",allogementSchema);
+module.exports = allogement;

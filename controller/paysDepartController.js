@@ -1,4 +1,4 @@
-const paysDepart = require('../models/PaysDepart');
+const paysDepart = require('../models/paysDepart');
 
 const GetPaysDepart = (req,res) => {
     paysDepart.find().then(response => {res.json({

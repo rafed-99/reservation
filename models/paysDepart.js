@@ -7,5 +7,5 @@ const PaysDepartSchema = new mongoose.Schema({
 
 })
 
-const PaysDepart = mongoose.model("PaysDepart",PaysDepartSchema);
-module.exports = PaysDepart;
+const paysDepart = mongoose.model("PaysDepart",PaysDepartSchema);
+module.exports = paysDepart;
