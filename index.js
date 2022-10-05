@@ -6,6 +6,7 @@ const bodyparser = require('body-parser')
 const reservationRouter = require('./routers/reservationRouter');
 const paysDepartRouter = require('./routers/paysDepartRouter');
 const allogementRouter = require('./routers/allogementRouter');
+const compagnieRouter = require('./routers/compagnieRouter');
 
 require('dotenv').config();
 
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGO_URL).then(() => console.log("DB Connected")).
 app.use("/reservation/",reservationRouter);
 app.use("/paysdepart/",paysDepartRouter);
 app.use("/allogement/",allogementRouter);
+app.use("/compagnie/",compagnieRouter);
 
 
 app.listen(process.env.PORT, ()=>{
