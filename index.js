@@ -7,7 +7,8 @@ const reservationRouter = require('./routers/reservationRouter');
 const paysDepartRouter = require('./routers/paysDepartRouter');
 const allogementRouter = require('./routers/allogementRouter');
 const compagnieRouter = require('./routers/compagnieRouter');
-const moyenRouter = require('./routers/moyenTransportRouter')
+const moyenRouter = require('./routers/moyenTransportRouter');
+const infoRouter = require('./routers/informationDestinationRouter');
 
 require('dotenv').config();
 
@@ -22,6 +23,7 @@ app.use("/paysdepart/",paysDepartRouter);
 app.use("/allogement/",allogementRouter);
 app.use("/compagnie/",compagnieRouter);
 app.use("/moyen/",moyenRouter);
+app.use("/info/",infoRouter);
 
 
 app.listen(process.env.PORT, ()=>{

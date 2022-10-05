@@ -33,11 +33,11 @@ const AddMoyen = (req,res) =>{
 }
 
 const UpdateMoyen = (req,res) =>{
-    let updateMoyen = new moyen ({
+    let updateMoyen = {
         typeMoyen : req.body.typeMoyen,
         compagnie : req.body.compagnie
-    })
-    updateMoyen.findByIdAndUpdate( req.params.id , {$set : updateMoyen}).then( result => { res.json ({
+    }
+    moyen.findByIdAndUpdate(req.params.id,{$set:updateMoyen}).then( result => { res.json ({
         message : 'moyen updated'
     })
     }).catch( error => { res.json({
