@@ -45,7 +45,7 @@ const AddReservation = (req,res) => {
 }
 
 const UpdateReservation = (req,res,next) =>{
-    let updatereservation = new reservation ({
+    let updatereservation = {
         dateAller : req.body.dateAller,
         dateRetour : req.body.dateRetour,
         nbrPersonnes : req.body.nbrPersonnes,
@@ -54,7 +54,7 @@ const UpdateReservation = (req,res,next) =>{
         moyenTransport : req.body.moyenTransport,
         allogement : req.body.allogement,
         prixTotal : req.body.prixTotal
-    })
+    }
     reservation.findByIdAndUpdate(req.params.id,{$set : updatereservation} ).then( response => {res.json({
         message : 'Updated'
     })
