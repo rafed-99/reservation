@@ -61,4 +61,18 @@ const DeleteCompagnie = (req,res) => {
     })
 }
 
-module.exports = {GetCompagnie,GetCompagnieById,AddCompagnie,UpdateCompagnie,DeleteCompagnie}
+const SortCompagnieAsc = (req,res) =>{
+    compagnie.find().sort({prixUnitaireCompagnie: 1}).then( response => { res.json (response)}).catch( error => {res.json({
+        message : 'Error'
+    })
+    })
+}
+
+const SortCompagnieDsc = (req,res) =>{
+    compagnie.find().sort({prixUnitaireCompagnie: -1}).then( response => { res.json (response)}).catch( error => {res.json({
+        message : 'Error'
+    })
+    })
+}
+
+module.exports = {GetCompagnie,GetCompagnieById,AddCompagnie,UpdateCompagnie,DeleteCompagnie,SortCompagnieAsc,SortCompagnieDsc}

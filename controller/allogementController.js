@@ -63,4 +63,18 @@ const DeleteAllogment = (req,res) => {
     })
 }
 
-module.exports = {GetAllogement,GetAllogementById,AddAllogement,UpdateAllogement,DeleteAllogment}
+const SortAllogementAsc = (req,res) =>{
+    allogement.find().sort({prixUnitaireAllogement: 1}).then( response => { res.json (response)}).catch( error => {res.json({
+        message : 'Error'
+    })
+    })
+}
+
+const SortAllogementDsc = (req,res) =>{
+    allogement.find().sort({prixUnitaireAllogement: -1}).then( response => { res.json (response)}).catch( error => {res.json({
+        message : 'Error'
+    })
+    })
+}
+
+module.exports = {GetAllogement,GetAllogementById,AddAllogement,UpdateAllogement,DeleteAllogment,SortAllogementAsc,SortAllogementDsc}
