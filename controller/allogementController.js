@@ -63,18 +63,32 @@ const DeleteAllogment = (req,res) => {
     })
 }
 
-const SortAllogementAsc = (req,res) =>{
+const SortAllogementAscByPrice = (req,res) =>{
     allogement.find().sort({prixUnitaireAllogement: 1}).then( response => { res.json (response)}).catch( error => {res.json({
         message : 'Error'
     })
     })
 }
 
-const SortAllogementDsc = (req,res) =>{
+const SortAllogementDscByPrice = (req,res) =>{
     allogement.find().sort({prixUnitaireAllogement: -1}).then( response => { res.json (response)}).catch( error => {res.json({
         message : 'Error'
     })
     })
 }
 
-module.exports = {GetAllogement,GetAllogementById,AddAllogement,UpdateAllogement,DeleteAllogment,SortAllogementAsc,SortAllogementDsc}
+const SortAllogementAscByEtoile = (req,res) =>{
+    allogement.find().sort({etoiles: 1}).then( response => { res.json (response)}).catch( error => {res.json({
+        message : 'Error'
+    })
+    })
+}
+
+const SortAllogementDscByEtoile = (req,res) =>{
+    allogement.find().sort({etoiles: -1}).then( response => { res.json (response)}).catch( error => {res.json({
+        message : 'Error'
+    })
+    })
+}
+
+module.exports = {GetAllogement,GetAllogementById,AddAllogement,UpdateAllogement,DeleteAllogment,SortAllogementAscByPrice,SortAllogementDscByPrice,SortAllogementAscByEtoile,SortAllogementDscByEtoile}

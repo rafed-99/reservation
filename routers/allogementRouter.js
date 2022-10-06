@@ -7,8 +7,9 @@ router.get('/getallogement/:id',allogementController.GetAllogementById);
 router.post('/addallogement',allogementController.AddAllogement);
 router.put('/updateallogement/:id',allogementController.UpdateAllogement);
 router.delete('/deleteallogement/:id',allogementController.DeleteAllogment);
-router.get('/sortallogementasc',allogementController.SortAllogementAsc);
-router.get('/sortallogementdsc',allogementController.SortAllogementDsc);
-
+router.get('/sortallogementascbyprice',allogementController.SortAllogementAscByPrice);
+router.get('/sortallogementdscbyprice',allogementController.SortAllogementDscByPrice);
+router.get('/sortallogementascbyetoiles',allogementController.SortAllogementAscByEtoile);
+router.get('/sortallogementdscbyetoiles',allogementController.SortAllogementDscByEtoile);
 
 module.exports = router;
