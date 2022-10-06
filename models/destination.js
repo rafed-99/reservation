@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const destinationSchema = new mongoose.Schema({
 
-    nomDestination : { Type:String , required:true , unique:true ,},
-    abbreviationDestination : {Type:String , required:true , unique:true ,},
-    informationDestination : { Type : mongoose.SchemaTypes.ObjectId , ref : "InformationDestination" ,},
+    nomDestination : { type:String , required:true , unique:true ,},
+    abbreviationDestination : {type:String , required:true , unique:true ,},
+    informationDestination : { type : mongoose.SchemaTypes.ObjectId , ref : "informationDestination" ,},
     monuments : [
         {
-            Type : mongoose.SchemaTypes.ObjectId , ref : "Monument"
+            type : mongoose.SchemaTypes.ObjectId , ref : "Monument"
         }
     ],
 })

@@ -9,6 +9,8 @@ const allogementRouter = require('./routers/allogementRouter');
 const compagnieRouter = require('./routers/compagnieRouter');
 const moyenRouter = require('./routers/moyenTransportRouter');
 const infoRouter = require('./routers/informationDestinationRouter');
+const monumentRouter = require('./routers/monumentRouter');
+const destinationRouter = require('./routers/destinationRouter');
 
 require('dotenv').config();
 
@@ -24,7 +26,8 @@ app.use("/allogement/",allogementRouter);
 app.use("/compagnie/",compagnieRouter);
 app.use("/moyen/",moyenRouter);
 app.use("/info/",infoRouter);
-
+app.use("/monument/",monumentRouter);
+app.use("/destination/",destinationRouter);
 
 app.listen(process.env.PORT, ()=>{
     console.log("app running");

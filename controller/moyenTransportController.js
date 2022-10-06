@@ -1,7 +1,7 @@
 const moyen = require('../models/moyenTransport');
 
 const GetMoyen = (req,res) => {
-    moyen.find().then( result => { res.json({result
+    moyen.find().populate({path : 'compagnie'}).then( result => { res.json({result
     })
     }).catch(error => { res.json({
         message : 'Error'
@@ -10,7 +10,7 @@ const GetMoyen = (req,res) => {
 }
 
 const GetMoyenById = (req,res) => {
-    moyen.findById(req.params.id).then( result => { res.json({result
+    moyen.findById(req.params.id).populate('compagnie').then( result => { res.json({result
     })
     }).catch(error => { res.json({
         message : 'Error moyen not found'

@@ -1,7 +1,16 @@
 const reservation = require('../models/reservation');
 
 const GetReservation = (req,res) => {
-    reservation.find().then(
+    reservation.find().populate({path : 'paysDepart',})
+    .populate({
+        path : 'destination',
+        populate : {
+            path : 'monuments'
+        },
+    }).populate({path :'moyenTransport',
+    populate : {
+        path :'compagnie'
+    },}).populate({path : 'allogement'}).then(
         response => {res.json({
             response
         })
@@ -45,7 +54,7 @@ const AddReservation = (req,res) => {
 }
 
 const UpdateReservation = (req,res,next) =>{
-    let updatereservation = new reservation ({
+    let updatereservation = {
         dateAller : req.body.dateAller,
         dateRetour : req.body.dateRetour,
         nbrPersonnes : req.body.nbrPersonnes,
@@ -54,7 +63,7 @@ const UpdateReservation = (req,res,next) =>{
         moyenTransport : req.body.moyenTransport,
         allogement : req.body.allogement,
         prixTotal : req.body.prixTotal
-    })
+    }
     reservation.findByIdAndUpdate(req.params.id,{$set : updatereservation} ).then( response => {res.json({
         message : 'Updated'
     })
