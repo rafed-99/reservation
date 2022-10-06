@@ -1,7 +1,7 @@
 const destination = require('../models/destination');
 
 const GetDestination = (req,res) => {
-    destination.find().then( result => { res.json({result
+    destination.find().populate({path : 'informationDestination'}).populate({path : 'monuments'}).then( result => { res.json({result //probleme populate informationdestination
     })
     }).catch(error => { res.json({
         message : 'Error'
@@ -10,7 +10,7 @@ const GetDestination = (req,res) => {
 }
 
 const GetDestinationById = (req,res) => {
-    destination.findById(req.params.id).then( result => { res.json({result
+    destination.findById(req.params.id).populate('monuments','-_id').then( result => { res.json({result
     })
     }).catch(error => { res.json({
         message : 'Error destination not found'
