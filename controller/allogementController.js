@@ -15,7 +15,7 @@ const GetAllogementById = (req,res) => {
         response
     })
     }).catch(error => { res.json({
-        message : 'Error pays depart not found'
+        message : 'Error allogement not found'
     })
     })
 }
@@ -31,7 +31,7 @@ const AddAllogement = (req,res) => {
         response
     })
     }).catch(error => { res.json({
-        message : 'Error pays depart not added'
+        message : 'Error allogement not added'
     })
     })
 }
@@ -48,7 +48,7 @@ const UpdateAllogement = (req,res) => {
         message : 'updated'
     })
     }).catch( error => { res.json({
-        message : 'error pays depart not updated'
+        message : 'error allogement not updated'
     })
     })
 }
@@ -91,4 +91,18 @@ const SortAllogementDscByEtoile = (req,res) =>{
     })
 }
 
-module.exports = {GetAllogement,GetAllogementById,AddAllogement,UpdateAllogement,DeleteAllogment,SortAllogementAscByPrice,SortAllogementDscByPrice,SortAllogementAscByEtoile,SortAllogementDscByEtoile}
+/*const Filter = (req,res) =>{
+
+    let filter = {};
+    if (req.query.etoiles){
+        filter = {etoiles : req.query.etoiles.split()};
+    }
+    allogement.find({filter}).then( response => { res.json (response)}).catch( error => {res.json({
+        message : 'Error'
+    })
+    })
+}*/
+
+
+
+module.exports = {GetAllogement,GetAllogementById,AddAllogement,UpdateAllogement,DeleteAllogment,SortAllogementAscByPrice,SortAllogementDscByPrice,SortAllogementAscByEtoile,SortAllogementDscByEtoile,/*Filter*/}

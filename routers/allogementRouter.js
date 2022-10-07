@@ -12,4 +12,8 @@ router.get('/sortallogementdscbyprice',allogementController.SortAllogementDscByP
 router.get('/sortallogementascbyetoiles',allogementController.SortAllogementAscByEtoile);
 router.get('/sortallogementdscbyetoiles',allogementController.SortAllogementDscByEtoile);
 
+
+/*router.get('/filter',allogementController.Filter);*/
+
+
 module.exports = router;
