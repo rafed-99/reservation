@@ -91,18 +91,8 @@ const SortAllogementDscByEtoile = (req,res) =>{
     })
 }
 
-/*const Filter = (req,res) =>{
-
-    let filter = {};
-    if (req.query.etoiles){
-        filter = {etoiles : req.query.etoiles.split()};
-    }
-    allogement.find({filter}).then( response => { res.json (response)}).catch( error => {res.json({
-        message : 'Error'
-    })
-    })
-}*/
 
 
 
-module.exports = {GetAllogement,GetAllogementById,AddAllogement,UpdateAllogement,DeleteAllogment,SortAllogementAscByPrice,SortAllogementDscByPrice,SortAllogementAscByEtoile,SortAllogementDscByEtoile,/*Filter*/}
+
+module.exports = {GetAllogement,GetAllogementById,AddAllogement,UpdateAllogement,DeleteAllogment,SortAllogementAscByPrice,SortAllogementDscByPrice,SortAllogementAscByEtoile,SortAllogementDscByEtoile}
